@@ -1,0 +1,373 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme to match SHA Filtration Systems branding */
+  /* Deep teal primary, vibrant lime green accent, tan/beige tertiary */
+  --background: #0f2f38;
+  --foreground: #f5f1ed;
+  --card: #1a3f4a;
+  --card-foreground: #f5f1ed;
+  --popover: #1a3f4a;
+  --popover-foreground: #f5f1ed;
+  --primary: #7fc844;
+  --primary-foreground: #0f2f38;
+  --secondary: #c9a875;
+  --secondary-foreground: #0f2f38;
+  --muted: #2d5361;
+  --muted-foreground: #b8c5ce;
+  --accent: #7fc844;
+  --accent-foreground: #0f2f38;
+  --destructive: #ef4444;
+  --destructive-foreground: #f5f1ed;
+  --border: #2d5361;
+  --input: #1a3f4a;
+  --ring: #7fc844;
+  --chart-1: #7fc844;
+  --chart-2: #c9a875;
+  --chart-3: #4fa8d8;
+  --chart-4: #6ec5d4;
+  --chart-5: #9fb66e;
+  --radius: 0.625rem;
+  --sidebar: #0f2f38;
+  --sidebar-foreground: #f5f1ed;
+  --sidebar-primary: #7fc844;
+  --sidebar-primary-foreground: #0f2f38;
+  --sidebar-accent: #c9a875;
+  --sidebar-accent-foreground: #0f2f38;
+  --sidebar-border: #2d5361;
+  --sidebar-ring: #7fc844;
+}
+
+.dark {
+  --background: #0f2f38;
+  --foreground: #f5f1ed;
+  --card: #1a3f4a;
+  --card-foreground: #f5f1ed;
+  --popover: #1a3f4a;
+  --popover-foreground: #f5f1ed;
+  --primary: #7fc844;
+  --primary-foreground: #0f2f38;
+  --secondary: #c9a875;
+  --secondary-foreground: #0f2f38;
+  --muted: #2d5361;
+  --muted-foreground: #b8c5ce;
+  --accent: #7fc844;
+  --accent-foreground: #0f2f38;
+  --destructive: #ef4444;
+  --destructive-foreground: #f5f1ed;
+  --border: #2d5361;
+  --input: #1a3f4a;
+  --ring: #7fc844;
+  --chart-1: #7fc844;
+  --chart-2: #c9a875;
+  --chart-3: #4fa8d8;
+  --chart-4: #6ec5d4;
+  --chart-5: #9fb66e;
+  --sidebar: #0f2f38;
+  --sidebar-foreground: #f5f1ed;
+  --sidebar-primary: #7fc844;
+  --sidebar-primary-foreground: #0f2f38;
+  --sidebar-accent: #c9a875;
+  --sidebar-accent-foreground: #0f2f38;
+  --sidebar-border: #2d5361;
+  --sidebar-ring: #7fc844;
+}
+
+@theme inline {
+  /* Updated to Inter font for cleaner professional appearance */
+  --font-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Inter Mono", "Inter Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Adding new keyframe for subtle bounce effect */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(127, 200, 68, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(127, 200, 68, 0);
+    }
+  }
+
+  @keyframes slideCarousel {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes carouselSlideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes carouselSlideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.8s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slideInFromRight {
+    animation: slideInFromRight 0.8s ease-out;
+  }
+
+  /* Adding slide up animation */
+  .animate-slideUp {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-carouselSlideLeft {
+    animation: carouselSlideLeft 0.6s ease-in-out;
+  }
+
+  .animate-carouselSlideRight {
+    animation: carouselSlideRight 0.6s ease-in-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes iconHoverScale {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes iconGlow {
+    from {
+      filter: drop-shadow(0 0 0px rgba(127, 200, 68, 0));
+    }
+    to {
+      filter: drop-shadow(0 0 8px rgba(127, 200, 68, 0.6));
+    }
+  }
+
+  .animate-iconHover {
+    animation: iconHoverScale 0.4s ease-out forwards;
+  }
+
+  .animate-iconGlow {
+    animation: iconGlow 0.4s ease-out forwards;
+  }
+
+  /* Add feature icon hover state styles */
+  .feature-icon-hover:hover {
+    animation: iconHoverScale 0.4s ease-out forwards, iconGlow 0.4s ease-out forwards;
+  }
+
+  /* Updated to trigger icon animation when hovering over parent card */
+  .group:hover .feature-icon-hover {
+    animation: iconHoverScale 0.4s ease-out forwards, iconGlow 0.4s ease-out forwards;
+  }
+
+  /* Add catchy button animations and effects */
+  @keyframes buttonPulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(127, 200, 68, 0.7), 0 0 20px rgba(127, 200, 68, 0.4);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(127, 200, 68, 0), 0 0 30px rgba(127, 200, 68, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes arrowBounce {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-button-pulse {
+    animation: buttonPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-arrow-bounce {
+    animation: arrowBounce 0.8s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      #7fc844 0%,
+      rgba(255, 255, 255, 0.2) 25%,
+      #7fc844 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      #7fc844 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+}
